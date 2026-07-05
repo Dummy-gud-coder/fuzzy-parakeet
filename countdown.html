@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Time Dashboard</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background: #0f172a;
+            color: #f8fafc;
+            margin: 0;
+            padding: 1rem;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .dashboard-layout {
+            display: flex;
+            gap: 1.25rem;
+            width: 100%;
+            max-width: 1500px;
+            align-items: flex-start;
+        }
+        .control-panel {
+            background: #1e293b;
+            padding: 1.25rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+            width: 350px;
+            flex-shrink: 0;
+            box-sizing: border-box;
+        }
+        .timers-container {
+            flex-grow: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 1.25rem;
+            width: 100%;
+        }
+        .form-group {
+            margin-bottom: 0.85rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.3rem;
+            font-size: 0.7rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .time-picker-row {
+            display: flex;
+            gap: 0.35rem;
+            background: #0f172a;
+            padding: 0.4rem;
+            border-radius: 0.4rem;
+            border: 1px solid #334155;
+        }
+        .time-select-group {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            min-width: 0;
+        }
+        .time-select-group span {
+            font-size: 0.6rem;
+            color: #64748b;
+            text-transform: uppercase;
+            margin-bottom: 0.15rem;
+            text-align: center;
+        }
+        select.time-dropdown {
+            width: 100%;
+            padding: 0.4rem;
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 0.25rem;
+            color: #f8fafc;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            appearance: none;
+            -webkit-appearance: none;
+        }
+        select.time-dropdown:focus {
+            border-color: #38bdf8;
+        }
+
+        input, button, textarea {
+            width: 100%;
+            padding: 0.55rem;
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 0.4rem;
+            color: #f8fafc;
+            font-size: 0.9rem;
+            box-sizing: border-box;
+        }
+        input:focus, textarea:focus {
+            outline: 2px solid #38bdf8;
+            border-color: transparent;
+        }
+        button {
+            color: white;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-countdown { background: #0284c7; margin-bottom: 0.4rem; }
+        .btn-countdown:hover { background: #0369a1; }
+        .btn-stopwatch { background: #16a34a; margin-bottom: 0.4rem; }
+        .btn-stopwatch:hover { background: #15803d; }
+        .btn-repeat { background: #7c3aed; }
+        .btn-repeat:hover { background: #6d28d9; }
+
+        .io-section {
+            margin-top: 1.25rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid #334155;
+        }
+        .io-btn-row {
+            display: flex;
+            gap: 0.4rem;
+            margin-top: 0.4rem;
+        }
+        .btn-io {
+            background: #475569;
+            font-size: 0.8rem;
+            padding: 0.4rem;
+        }
+        .btn-io:hover { background: #334155; }
+
+        .timer-card {
+            background: #1e293b;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3);
+            border-left: 5px solid #38bdf8;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .timer-card.past-event { border-left-color: #ef4444; background: #2d1a1a; }
+        .timer-card.stopwatch-card { border-left-color: #16a34a; }
+        .timer-card.repeat-card { border-left-color: #7c3aed; }
+        
+        .timer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+        }
+        .timer-title { font-size: 1rem; font-weight: 600; color: #f1f5f9; }
+        .timer-badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            padding: 0.1rem 0.35rem;
+            border-radius: 0.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-left: 0.4rem;
+            vertical-align: middle;
+        }
+        .badge-countdown { background: #0284c7; color: white; }
+        .badge-past { background: #ef4444; color: white; }
+        .badge-stopwatch { background: #16a34a; color: white; }
+        .badge-repeat { background: #7c3aed; color: white; }
+        .timer-target { font-size: 0.75rem; color: #94a3b8; margin-top: 0.15rem; }
+        
+        .delete-btn {
+            background: transparent;
+            border: none;
+            color: #64748b;
+            font-size: 1.15rem;
+            cursor: pointer;
+            width: auto;
+            padding: 0 0.15rem;
+        }
+        .delete-btn:hover { color: #ef4444; }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.4rem;
+        }
+        .metric-box {
+            background: #0f172a;
+            padding: 0.4rem 0.2rem;
+            border-radius: 0.4rem;
+            text-align: center;
+            border: 1px solid #334155;
+        }
+        .timer-card.past-event .metric-box { background: #1a0f0f; border-color: #4c1d1d; }
+        .num { font-size: 1.15rem; font-weight: 700; }
+        .lbl { font-size: 0.55rem; text-transform: uppercase; color: #64748b; margin-top: 0.1rem; }
+        
+        .total-hours-box {
+            grid-column: span 4;
+            margin-top: 0.4rem;
+            background: #334155;
+            color: #f8fafc;
+            font-weight: 600;
+            padding: 0.3rem;
+            border-radius: 0.3rem;
+            text-align: center;
+            font-size: 0.75rem;
+        }
+        .timer-card.past-event .total-hours-box { background: #ef4444; }
+        .timer-card.stopwatch-card .total-hours-box { background: #16a34a; }
+        .timer-card.repeat-card .total-hours-box { background: #7c3aed; }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-layout">
+        <div class="control-panel">
+            <div class="form-group">
+                <label for="msgInput">Display Name / Message</label>
+                <input type="text" id="msgInput" placeholder="Label text...">
+            </div>
+            <div class="form-group">
+                <label for="dateInput">Select Date</label>
+                <input type="date" id="dateInput" required>
+            </div>
+            <div class="form-group">
+                <label>Target Time</label>
+                <div class="time-picker-row">
+                    <div class="time-select-group">
+                        <span>Hour</span>
+                        <select id="pickHour" class="time-dropdown">
+                            <option value="00">00</option>
+                        </select>
+                    </div>
+                    <div class="time-select-group">
+                        <span>Min</span>
+                        <select id="pickMin" class="time-dropdown"></select>
+                    </div>
+                    <div class="time-select-group">
+                        <span>Sec</span>
+                        <select id="pickSec" class="time-dropdown"></select>
+                    </div>
+                    <div class="time-select-group">
+                        <span>AM/PM</span>
+                        <select id="pickAmpm" class="time-dropdown">
+                            <option value="PM" selected>PM</option>
+                            <option value="AM">AM</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 1rem;">
+                <button class="btn-countdown" onclick="addTimer('countdown')">Add Countdown</button>
+                <button class="btn-stopwatch" onclick="addTimer('stopwatch')">Start New Stopwatch</button>
+                <button class="btn-repeat" onclick="addTimer('repeat')">Add Auto-Repeat Timer</button>
+            </div>
+
+            <div class="io-section">
+                <label for="jsonClipboard">Countdowns JSON (Import/Export)</label>
+                <textarea id="jsonClipboard" rows="4" placeholder="JSON string will load or paste here..."></textarea>
+                <div class="io-btn-row">
+                    <button class="btn-io" onclick="exportCountdowns()">Export</button>
+                    <button class="btn-io" onclick="copyJsonText()">Copy</button>
+                    <button class="btn-io" onclick="importCountdowns()">Import</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="timers-container" id="timersContainer"></div>
+    </div>
+
+<script>
+    let items = [];
+    
+    let initialPerformanceNow = performance.now();
+    let initialUnixTime = Date.now();
+
+    function triggerPulsingAlarm() {
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        let playtime = audioCtx.currentTime;
+        for (let i = 0; i < 4; i++) {
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(660, playtime); 
+            osc.frequency.setValueAtTime(880, playtime + 0.1); 
+            gain.gain.setValueAtTime(0, playtime);
+            gain.gain.linearRampToValueAtTime(0.25, playtime + 0.05);
+            gain.gain.exponentialRampToValueAtTime(0.01, playtime + 0.3);
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start(playtime);
+            osc.stop(playtime + 0.35);
+            playtime += 0.4;
+        }
+    }
+
+    function populateDropdown(elId, start, end) {
+        const select = document.getElementById(elId);
+        for (let i = start; i <= end; i++) {
+            const opt = document.createElement('option');
+            const valStr = String(i).padStart(2, '0');
+            opt.value = valStr;
+            opt.text = valStr;
+            select.appendChild(opt);
+        }
+    }
+
+    populateDropdown('pickHour', 1, 12);
+    populateDropdown('pickMin', 0, 59);
+    populateDropdown('pickSec', 0, 59);
+
+    // Default configuration choices
+    document.getElementById('pickHour').value = "00";
+    document.getElementById('pickMin').value = "00";
+    document.getElementById('pickSec').value = "00";
+    document.getElementById('pickAmpm').value = "PM";
+
+    document.getElementById('dateInput').value = new Date().toISOString().split('T')[0];
+
+    function saveToCache() {
+        localStorage.setItem('dashboard_timers', JSON.stringify(items));
+    }
+
+    function loadFromCache() {
+        const cached = localStorage.getItem('dashboard_timers');
+        if (cached) {
+            try {
+                items = JSON.parse(cached);
+                renderWorkspace();
+            } catch(e) {
+                items = [];
+            }
+        }
+    }
+
+    function addTimer(mode) {
+        const dateVal = document.getElementById('dateInput').value;
+        const hRaw = document.getElementById('pickHour').value;
+        const hVal = parseInt(hRaw, 10);
+        const mVal = parseInt(document.getElementById('pickMin').value, 10);
+        const sVal = parseInt(document.getElementById('pickSec').value, 10);
+        const ampmVal = document.getElementById('pickAmpm').value;
+
+        let name = document.getElementById('msgInput').value.trim();
+        if (!name) name = mode.toUpperCase();
+
+        const nowUnix = Date.now();
+        const startWallClock = new Date();
+        let target = null;
+        let displayMeta = '';
+        let targetLoopSeconds = 10;
+
+        // Calculate hours/minutes/seconds as a direct duration interval for the loop system
+        if (mode === 'repeat') {
+            const calculatedInterval = (hVal * 3600) + (mVal * 60) + sVal;
+            targetLoopSeconds = calculatedInterval > 0 ? calculatedInterval : 10;
+        }
+
+        if (mode === 'countdown') {
+            if (!dateVal) return alert('Please enter a target calendar date.');
+            
+            let militaryHour = hVal;
+            if (hRaw === '00') {
+                militaryHour = (ampmVal === 'PM') ? 12 : 0;
+            } else {
+                if (ampmVal === 'PM' && hVal < 12) militaryHour += 12;
+                if (ampmVal === 'AM' && hVal === 12) militaryHour = 0;
+            }
+            
+            const p = dateVal.split('-');
+            const targetDateObj = new Date(p[0], p[1] - 1, p[2], militaryHour, mVal, sVal);
+            target = targetDateObj.getTime();
+            displayMeta = `${dateVal} @ ${hRaw}:${String(mVal).padStart(2, '0')}:${String(sVal).padStart(2, '0')} ${ampmVal}`;
+        } else if (mode === 'stopwatch') {
+            target = nowUnix; 
+            displayMeta = `Started: ${startWallClock.toLocaleTimeString()}`;
+        } else if (mode === 'repeat') {
+            target = nowUnix + (targetLoopSeconds * 1000);
+            displayMeta = `Loops every: ${targetLoopSeconds}s (Set via Target Time)`;
+        }
+
+        items.push({
+            id: Date.now() + Math.random(),
+            mode: mode,
+            name: name,
+            baseTarget: target,
+            loopSeconds: targetLoopSeconds,
+            displayMeta: displayMeta,
+            triggered: false
+        });
+
+        document.getElementById('msgInput').value = '';
+        saveToCache();
+        renderWorkspace();
+    }
+
+    function removeElement(id) {
+        const idx = items.findIndex(item => item.id === id);
+        if (idx !== -1) items.splice(idx, 1);
+        saveToCache();
+        renderWorkspace();
+    }
+
+    function exportCountdowns() {
+        const countdowns = items.filter(item => item.mode === 'countdown');
+        document.getElementById('jsonClipboard').value = JSON.stringify(countdowns, null, 2);
+    }
+
+    function copyJsonText() {
+        const textarea = document.getElementById('jsonClipboard');
+        textarea.select();
+        navigator.clipboard.writeText(textarea.value);
+    }
+
+    function importCountdowns() {
+        const rawJson = document.getElementById('jsonClipboard').value.trim();
+        if (!rawJson) return alert("Please paste valid JSON array into the field first.");
+        try {
+            const parsed = JSON.parse(rawJson);
+            if (!Array.isArray(parsed)) return alert("JSON data must be a top-level array.");
+            
+            // Retain existing non-countdown items, merge imported countdown data
+            const nonCountdowns = items.filter(item => item.mode !== 'countdown');
+            const strictlyCountdowns = parsed.filter(item => item.mode === 'countdown').map(item => ({
+                ...item,
+                id: Date.now() + Math.random() // assign fresh id scope
+            }));
+
+            items = [...nonCountdowns, ...strictlyCountdowns];
+            saveToCache();
+            renderWorkspace();
+            alert(`Successfully imported ${strictlyCountdowns.length} countdown(s).`);
+        } catch (e) {
+            alert("Error parsing JSON. Check formatting integrity.");
+        }
+    }
+
+    function renderWorkspace() {
+        const container = document.getElementById('timersContainer');
+        container.innerHTML = '';
+
+        const topItems = items.filter(i => i.mode === 'stopwatch' || i.mode === 'repeat');
+        const countdownItems = items.filter(i => i.mode === 'countdown')
+                                     .sort((a, b) => a.baseTarget - b.baseTarget);
+
+        const sortedItems = [...topItems, ...countdownItems];
+
+        sortedItems.forEach(item => {
+            const card = document.createElement('div');
+            card.className = `timer-card ${item.mode}-card`;
+            card.id = `box-${item.id}`;
+            
+            card.innerHTML = `
+                <div class="timer-header">
+                    <div>
+                        <span id="badge-container-${item.id}"></span>
+                        <span class="timer-title">${item.name}</span>
+                        <div class="timer-target">${item.displayMeta}</div>
+                    </div>
+                    <button class="delete-btn" onclick="removeElement(${item.id})">&times;</button>
+                </div>
+                <div class="metrics-grid">
+                    <div class="metric-box"><div class="num" id="d-${item.id}">00</div><div class="lbl">Days</div></div>
+                    <div class="metric-box"><div class="num" id="h-${item.id}">00</div><div class="lbl">Hrs</div></div>
+                    <div class="metric-box"><div class="num" id="m-${item.id}">00</div><div class="lbl">Mins</div></div>
+                    <div class="metric-box"><div class="num" id="s-${item.id}">00</div><div class="lbl">Secs</div></div>
+                    <div class="total-hours-box" id="tot-${item.id}">0 Hours</div>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+    }
+
+    function processAnimationLoop() {
+        const highResNow = performance.now();
+        const wallClockNow = Date.now();
+
+        items.forEach(item => {
+            const cardEl = document.getElementById(`box-${item.id}`);
+            if (!cardEl) return;
+
+            let delta = 0;
+            let pastState = false;
+
+            if (item.mode === 'stopwatch') {
+                const liveElapsedTime = highResNow - initialPerformanceNow;
+                const runtimeCalculatedUnix = initialUnixTime + liveElapsedTime;
+                delta = runtimeCalculatedUnix - item.baseTarget;
+            } else {
+                delta = item.baseTarget - wallClockNow;
+                if (delta <= 0) {
+                    pastState = true;
+                    delta = Math.abs(delta);
+
+                    if (item.mode === 'repeat') {
+                        triggerPulsingAlarm();
+                        item.baseTarget = Date.now() + (item.loopSeconds * 1000);
+                        delta = item.baseTarget - wallClockNow;
+                        pastState = false;
+                        saveToCache();
+                    } else if (item.mode === 'countdown' && !item.triggered) {
+                        triggerPulsingAlarm();
+                        item.triggered = true;
+                        saveToCache();
+                    }
+                }
+            }
+
+            const badgeBox = document.getElementById(`badge-container-${item.id}`);
+            if (pastState && item.mode === 'countdown') {
+                cardEl.classList.add('past-event');
+                if (badgeBox) badgeBox.innerHTML = `<span class="timer-badge badge-past">PASSED</span>`;
+            } else {
+                cardEl.classList.remove('past-event');
+                if (badgeBox) badgeBox.innerHTML = `<span class="timer-badge badge-${item.mode}">${item.mode}</span>`;
+            }
+
+            const days = Math.floor(delta / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((delta % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((delta % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((delta % (1000 * 60)) / 1000);
+            const rawTotalHours = Math.floor(delta / (1000 * 60 * 60));
+
+            document.getElementById(`d-${item.id}`).innerText = String(days).padStart(2, '0');
+            document.getElementById(`h-${item.id}`).innerText = String(hours).padStart(2, '0');
+            document.getElementById(`m-${item.id}`).innerText = String(minutes).padStart(2, '0');
+            document.getElementById(`s-${item.id}`).innerText = String(seconds).padStart(2, '0');
+
+            let footerString = `${rawTotalHours} Hours`;
+            if (item.mode === 'stopwatch') footerString = `Elapsed Total: ${rawTotalHours} Hours`;
+            else if (item.mode === 'repeat') footerString = `Loop duration: ${item.loopSeconds}s`;
+            else if (pastState) footerString = `Time Passed Since: ${rawTotalHours} Hours`;
+
+            document.getElementById(`tot-${item.id}`).innerText = footerString;
+        });
+
+        requestAnimationFrame(processAnimationLoop);
+    }
+
+    loadFromCache();
+    requestAnimationFrame(processAnimationLoop);
+</script>
+
+</body>
+</html>
