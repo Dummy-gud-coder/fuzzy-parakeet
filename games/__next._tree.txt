@@ -1,4 +1,4 @@
-:HL["/fuzzy-parakeet/_next/static/chunks/a151ac3c776aedb0.css","style"]
+:HL["/fuzzy-parakeet/_next/static/chunks/0497f9bd7190f2cf.css","style"]
 :HL["/fuzzy-parakeet/_next/static/media/FiraCode_Retina-s.p.c5b23147.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/fuzzy-parakeet/_next/static/media/eb_garamond_v14_latin_regular-s.p.cba88904.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-0:{"buildId":"Qx40gpuRZJnX-ESFNDGa1","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"games","paramType":null,"paramKey":"games","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"Ez_3Rcl0d02gjxiPaC324","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"games","paramType":null,"paramKey":"games","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
