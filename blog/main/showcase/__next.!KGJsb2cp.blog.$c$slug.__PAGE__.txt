@@ -1,0 +1,122 @@
+1:"$Sreact.fragment"
+2:I[22016,["/fuzzy-parakeet/_next/static/chunks/0495076cdb2e2502.js","/fuzzy-parakeet/_next/static/chunks/debc7a3d977f462c.js","/fuzzy-parakeet/_next/static/chunks/59276fb3b2a3c453.js","/fuzzy-parakeet/_next/static/chunks/34fcb5736f0ee19f.js","/fuzzy-parakeet/_next/static/chunks/8cb30c562cd9cdd8.js","/fuzzy-parakeet/_next/static/chunks/a9788d16051df9f5.js"],""]
+3:I[67259,["/fuzzy-parakeet/_next/static/chunks/0495076cdb2e2502.js","/fuzzy-parakeet/_next/static/chunks/debc7a3d977f462c.js","/fuzzy-parakeet/_next/static/chunks/59276fb3b2a3c453.js","/fuzzy-parakeet/_next/static/chunks/34fcb5736f0ee19f.js","/fuzzy-parakeet/_next/static/chunks/8cb30c562cd9cdd8.js","/fuzzy-parakeet/_next/static/chunks/a9788d16051df9f5.js"],"CustomMDX",1]
+9:I[97367,["/fuzzy-parakeet/_next/static/chunks/ff1a16fafef87110.js","/fuzzy-parakeet/_next/static/chunks/a9f8466b771b6797.js"],"OutletBoundary"]
+a:"$Sreact.suspense"
+4:Tb0a,
+## Introduction
+
+Welcome to the feature showcase. This page demonstrates the full array of content rendering capabilities supported by our static blog engine.
+
+<Prompt type="info" title="Quick Tip">
+  This is a custom Chirpy-style callout box. You can use types like `info`, `warning`, or `danger` directly inside your Markdown files.
+</Prompt>
+
+---
+
+## Typography & Inline Elements
+
+Standard Markdown formatting works seamlessly:
+
+* **Bold Text** for emphasis.
+* *Italic Text* for stylistic cues.
+* ~~Strikethrough~~ for deprecated notes.
+* Inline code like `const version = "14.2.0";`.
+* External links like [Next.js Documentation](https://nextjs.org).
+
+---
+
+## Mathematical Equations ($\LaTeX$)
+
+Mathematical expressions are rendered using KaTeX.
+
+### Inline Math
+The classic mass-energy equivalence equation is $E = mc^2$, where $c \approx 3 \times 10^8 \text{ m/s}$.
+
+### Display Math
+Standalone formulas render center-aligned with equation formatting:
+
+$$f(x) = \int_{-\infty}^{\infty} \hat{f}(\xi) \, e^{2\pi i \xi x} \, d\xi$$
+
+Or matrices and linear systems:
+
+$$\begin{bmatrix} a & b \\ c & d \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} ax + by \\ cx + dy \end{bmatrix}$$
+
+---
+
+## Code Highlighting
+
+Syntax highlighting is powered by `rehype-pretty-code` and `shiki`. Line wraps scroll horizontally on narrow viewports without clipping.
+
+### TypeScript / Next.js
+```typescript
+import { getAllPosts, getPostBySlug } from '@/lib/posts';
+
+export async function generateStaticParams() {
+  const posts = getAllPosts();
+  return posts.map((post) => ({
+    slug: post.slug.split('/').filter(Boolean),
+  }));
+}
+
+```
+
+### Python
+
+```python
+def calculate_fibonacci(n: int) -> list[int]:
+    """Generates Fibonacci sequence up to n terms."""
+    sequence = [0, 1]
+    while len(sequence) < n:
+        sequence.append(sequence[-1] + sequence[-2])
+    return sequence[:n]
+
+```
+
+---
+
+## Multimedia Assets
+
+Below are placeholders for standard images, custom React video embeds, and audio players.
+
+### 1. Image Embeds
+
+Standard Markdown syntax automatically wraps through Next.js `<Image />`:
+
+### 2. Video Player
+
+Embed local or hosted MP4 video files using the custom `<Video />` component:
+
+### 3. Audio Player
+
+Embed podcasts or music previews using the custom `<Audio />` component:
+
+---
+
+## Callout Variations
+
+---
+## Lists & Tables
+
+### Task List
+
+* [x] Configure Next.js App Router
+* [x] Setup MDX parsing and frontmatter extraction
+* [x] Integrate KaTeX and syntax highlighting
+* [ ] Add search functionality
+
+### Data Table
+
+| Feature | Supported | Plugin / Library |
+| --- | --- | --- |
+| $\LaTeX$ Math | Yes | `remark-math` / `rehype-katex` |
+| Code Blocks | Yes | `rehype-pretty-code` / `shiki` |
+| Table of Contents | Yes | `rehype-slug` |
+| Nested Categories | Yes | Custom Folder Reader |
+
+0:{"buildId":"qrBLbxJeaybs18ndWYIVt","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"w-full justify-items-center px-6 py-12 font-serif min-h-[100vh] bg-neutral-950","children":["$","div",null,{"className":"flex gap-12","children":[["$","article",null,{"className":"flex-1 w-[50vw] lg:w-3xl","children":[["$","div",null,{"className":"flex items-center gap-2 text-xs font-mono text-neutral-400 mb-4","children":[["$","$L2",null,{"href":"/categories","className":"hover:text-emerald-400","children":"Categories"}],[["$","span","0",{"className":"flex items-center gap-2","children":[["$","span",null,{"children":"/"}],["$","$L2",null,{"href":"/categories/tech","className":"hover:text-emerald-400 capitalize","children":"tech"}]]}],["$","span","1",{"className":"flex items-center gap-2","children":[["$","span",null,{"children":"/"}],["$","$L2",null,{"href":"/categories/web","className":"hover:text-emerald-400 capitalize","children":"web"}]]}]]]}],["$","h1",null,{"className":"text-4xl font-bold tracking-tight mb-4 text-neutral-50","children":"MDX test"}],["$","div",null,{"className":"flex flex-wrap items-center gap-4 text-xs font-mono text-neutral-400 mb-8 border-b border-neutral-800 pb-4","children":[["$","time",null,{"children":"2026-07-20"}],["$","span",null,{"children":"•"}],["$","div",null,{"className":"flex gap-2","children":[["$","$L2","mdx",{"href":"/tags/mdx","className":"text-emerald-400 hover:underline","children":["#","mdx"]}],["$","$L2","react",{"href":"/tags/react","className":"text-emerald-400 hover:underline","children":["#","react"]}],["$","$L2","nextjs",{"href":"/tags/nextjs","className":"text-emerald-400 hover:underline","children":["#","nextjs"]}],["$","$L2","showcase",{"href":"/tags/showcase","className":"text-emerald-400 hover:underline","children":["#","showcase"]}]]}]]}],["$","$L3",null,{"source":"$4"}]]}],"$L5"]}]}],["$L6","$L7"],"$L8"]}],"loading":null,"isPartial":false}
+5:["$","nav",null,{"className":"sticky top-8 hidden xl:block w-64 space-y-2 text-sm text-neutral-400","children":[["$","p",null,{"className":"font-semibold text-neutral-200 uppercase tracking-wider text-xs mb-3","children":"On This Page"}],["$","ul",null,{"className":"space-y-2 border-l border-neutral-800 pl-4","children":[["$","li","introduction",{"style":{"paddingLeft":"0px"},"children":["$","a",null,{"href":"#introduction","className":"hover:text-emerald-400 transition-colors block py-0.5","children":"Introduction"}]}],["$","li","typography-inline-elements",{"style":{"paddingLeft":"0px"},"children":["$","a",null,{"href":"#typography-inline-elements","className":"hover:text-emerald-400 transition-colors block py-0.5","children":"Typography & Inline Elements"}]}],["$","li","mathematical-equations-latex",{"style":{"paddingLeft":"0px"},"children":["$","a",null,{"href":"#mathematical-equations-latex","className":"hover:text-emerald-400 transition-colors block py-0.5","children":"Mathematical Equations ($\\LaTeX$)"}]}],["$","li","inline-math",{"style":{"paddingLeft":"12px"},"children":["$","a",null,{"href":"#inline-math","className":"hover:text-emerald-400 transition-colors block py-0.5","children":"Inline Math"}]}],["$","li","display-math",{"style":{"paddingLeft":"12px"},"children":["$","a",null,{"href":"#display-math","className":"hover:text-emerald-400 transition-colors block py-0.5","children":"Display Math"}]}],["$","li","code-highlighting",{"style":{"paddingLeft":"0px"},"children":["$","a",null,{"href":"#code-highlighting","className":"hover:text-emerald-400 transition-colors block py-0.5","children":"Code Highlighting"}]}],["$","li","typescript-nextjs",{"style":{"paddingLeft":"12px"},"children":["$","a",null,{"href":"#typescript-nextjs","className":"hover:text-emerald-400 transition-colors block py-0.5","children":"TypeScript / Next.js"}]}],["$","li","python",{"style":{"paddingLeft":"12px"},"children":["$","a",null,{"href":"#python","className":"hover:text-emerald-400 transition-colors block py-0.5","children":"Python"}]}],["$","li","multimedia-assets",{"style":{"paddingLeft":"0px"},"children":["$","a",null,{"href":"#multimedia-assets","className":"hover:text-emerald-400 transition-colors block py-0.5","children":"Multimedia Assets"}]}],["$","li","1-image-embeds",{"style":{"paddingLeft":"12px"},"children":["$","a",null,{"href":"#1-image-embeds","className":"hover:text-emerald-400 transition-colors block py-0.5","children":"1. Image Embeds"}]}],["$","li","2-video-player",{"style":{"paddingLeft":"12px"},"children":["$","a",null,{"href":"#2-video-player","className":"hover:text-emerald-400 transition-colors block py-0.5","children":"2. Video Player"}]}],["$","li","3-audio-player",{"style":{"paddingLeft":"12px"},"children":["$","a",null,{"href":"#3-audio-player","className":"hover:text-emerald-400 transition-colors block py-0.5","children":"3. Audio Player"}]}],["$","li","callout-variations",{"style":{"paddingLeft":"0px"},"children":["$","a",null,{"href":"#callout-variations","className":"hover:text-emerald-400 transition-colors block py-0.5","children":"Callout Variations"}]}],["$","li","lists-tables",{"style":{"paddingLeft":"0px"},"children":["$","a",null,{"href":"#lists-tables","className":"hover:text-emerald-400 transition-colors block py-0.5","children":"Lists & Tables"}]}],["$","li","task-list",{"style":{"paddingLeft":"12px"},"children":["$","a",null,{"href":"#task-list","className":"hover:text-emerald-400 transition-colors block py-0.5","children":"Task List"}]}],["$","li","data-table",{"style":{"paddingLeft":"12px"},"children":["$","a",null,{"href":"#data-table","className":"hover:text-emerald-400 transition-colors block py-0.5","children":"Data Table"}]}]]}]]}]
+6:["$","script","script-0",{"src":"/fuzzy-parakeet/_next/static/chunks/8cb30c562cd9cdd8.js","async":true}]
+7:["$","script","script-1",{"src":"/fuzzy-parakeet/_next/static/chunks/a9788d16051df9f5.js","async":true}]
+8:["$","$L9",null,{"children":["$","$a",null,{"name":"Next.MetadataOutlet","children":"$@b"}]}]
+b:null
