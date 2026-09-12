@@ -1,4 +1,4 @@
 1:"$Sreact.fragment"
 2:I[339756,["/fuzzy-parakeet/_next/static/chunks/d96012bcfc98706a.js","/fuzzy-parakeet/_next/static/chunks/73e3194f06db260e.js"],"default"]
 3:I[837457,["/fuzzy-parakeet/_next/static/chunks/d96012bcfc98706a.js","/fuzzy-parakeet/_next/static/chunks/73e3194f06db260e.js"],"default"]
-0:{"buildId":"tvHrsnjHnAMQIgz_6GC2P","rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"z39n2qht_3TPXKsUv8nXZ","rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"loading":null,"isPartial":false}
