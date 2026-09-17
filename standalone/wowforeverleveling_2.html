@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>World of Warcraft - Leveling Talent Guides</title>
+    <style>
+        body {
+            background-color: #0b0d12;
+            color: #d1c4e9;
+            font-family: Verdana, Arial, sans-serif;
+            font-size: 13px;
+            margin: 20px;
+        }
+        h1 {
+            color: #f8b700;
+            text-align: center;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+        .faction-section, .info-section {
+            margin-bottom: 30px;
+            border: 1px solid #2a2a3b;
+            background-color: #12141d;
+            padding: 15px;
+        }
+        .faction-title, .info-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding: 5px;
+        }
+        .horde { color: #ff4444; border-bottom: 1px solid #ff4444; }
+        .alliance { color: #0099ff; border-bottom: 1px solid #0099ff; }
+        .gold-title { color: #f8b700; border-bottom: 1px solid #f8b700; }
+        
+        .class-card, .info-card {
+            background-color: #1a1c28;
+            border: 1px solid #383a59;
+            margin-bottom: 20px;
+            padding: 12px;
+        }
+        .class-header, .card-header {
+            font-size: 15px;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+        .meta-info {
+            color: #a0a0a0;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 8px;
+        }
+        th, td {
+            border: 1px solid #2e3148;
+            padding: 6px 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #24273a;
+            color: #f8b700;
+        }
+        tr:nth-child(even) {
+            background-color: #161823;
+        }
+        .tree-name {
+            color: #00ffcc;
+            font-weight: bold;
+        }
+        .tree-secondary {
+            color: #ff9900;
+            font-weight: bold;
+        }
+        .dualspec-note, .highlight-box {
+            background-color: #252010;
+            border-left: 4px solid #f8b700;
+            padding: 8px;
+            margin-top: 10px;
+            color: #e6d2a2;
+        }
+        ul {
+            margin: 5px 0 10px 20px;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>World of Warcraft: Class Leveling, World Routes & Systems Guide</h1>
+
+<!-- WORLD TRAVEL & ROUTES SECTION -->
+<div class="info-section">
+    <div class="info-title gold-title">NEW WORLD TRAVEL & SHIP ROUTES</div>
+    <div class="info-card">
+        <p>WoW: Forever introduces new nautical pathways to keep the classic exploration feel while making cross-faction and cross-continental travel faster:</p>
+        <ul>
+            <li><strong>Stormwind Harbor ↔ Auberdine:</strong> Links Night Elf and Human starting hubs directly. Allows players to group up early in Elwynn or Teldrassil without taking dangerous overland routes.</li>
+            <li><strong>Menethil ↔ Southshore ↔ Auberdine:</strong> A triangular ferry route linking the Wetlands, Hillsbrad Foothills, and Darkshore. Opens up clean progression loops through mid-level zones.</li>
+            <li><strong>Riverglades ↔ Steamwheedle Port:</strong> Direct connection from the newly added Riverglades zone (Eastern Kingdoms) to Tanaris (Kalimdor), providing quick access to southern leveling hubs.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- LEVELING PERMUTATIONS SECTION -->
+<div class="info-section">
+    <div class="info-title gold-title">LEVELING PERMUTATIONS & ZONE HOPPING</div>
+    <div class="info-card">
+        <table>
+            <thead>
+                <tr>
+                    <th>Level Range</th>
+                    <th>Kalimdor Focused</th>
+                    <th>Eastern Kingdoms Focused</th>
+                    <th>Hybrid Optimal Route</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1–10</strong></td>
+                    <td>Teldrassil / Durotar</td>
+                    <td>Elwynn / Dun Morogh / Tirisfal</td>
+                    <td>Elwynn Forest / Teldrassil (Sail via SW Harbor)</td>
+                </tr>
+                <tr>
+                    <td><strong>10–20</strong></td>
+                    <td>Darkshore / Barrens</td>
+                    <td>Westfall / Loch Modan / Silverpine</td>
+                    <td>Darkshore (Sail SW ↔ Auberdine)</td>
+                </tr>
+                <tr>
+                    <td><strong>20–30</strong></td>
+                    <td>Ashenvale / Stonetalon</td>
+                    <td>Hillsbrad / Wetlands</td>
+                    <td>Ashenvale → Southshore (Auberdine Ferry)</td>
+                </tr>
+                <tr>
+                    <td><strong>30–45</strong></td>
+                    <td>Thousand Needles / Feralas</td>
+                    <td>STV / Arathi / Riverglades</td>
+                    <td>Riverglades → Steamwheedle Port → Tanaris</td>
+                </tr>
+                <tr>
+                    <td><strong>45–60</strong></td>
+                    <td>Tanaris / Silithus / Winterspring</td>
+                    <td>Hinterlands / Searing Gorge / EPL</td>
+                    <td>Feralas → Western Plaguelands → Winterspring</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- NEW ZONE: RIVERGLADES -->
+<div class="info-section">
+    <div class="info-title gold-title">NEW ZONE: THE RIVERGLADES (LEVELS 30–45)</div>
+    <div class="info-card">
+        <div class="card-header">Zone Layout & Key Hubs</div>
+        <p>Bordered by Redridge Mountains, Badlands, Burning Steppes, and Swamp of Sorrows, the Riverglades contains 150–200 new quests and a central Goblin transport hub.</p>
+        <ul>
+            <li><strong>Powderfuse Port:</strong> Coastal neutral Goblin town connecting to Steamwheedle Port via ship. Main hub for repairs, flight path, and cross-continent trade.</li>
+            <li><strong>Western Uplands:</strong> Rugged foothills featuring Gnoll camps extending from Redridge and early Ogre outposts.</li>
+            <li><strong>Central River Basin:</strong> Grasslands housing faction outposts and Twilight's Hammer cultist camps along the water.</li>
+            <li><strong>Southern Border:</strong> Dense swamps hosting the remnants of the Brotherhood of the Horse and higher-level group objectives.</li>
+        </ul>
+        <div class="highlight-box">
+            <strong>Optimal Leveling Route:</strong> Powderfuse Port Hub (30–34) → Western Gnolls & Central Basin (34–38) → Southern Brotherhood & Ogre Strongholds (38–45) → Sail to Tanaris or travel into Badlands.
+        </div>
+    </div>
+</div>
+
+<!-- ENDGAME & RAID PROGRESSION -->
+<div class="info-section">
+    <div class="info-title gold-title">LEVEL 60 ENDGAME & RAID PROGRESSION</div>
+    <div class="info-card">
+        <div class="card-header">Outdoor Zone: Mount Hyjal</div>
+        <p>Accessible via Darkwhisper Gorge in Winterspring, Mount Hyjal is a physical level 60 outdoor zone set after Archimonde's defeat. It features solo and group storylines surrounding the corruption of Nordrassil.</p>
+        
+        <div class="card-header" style="margin-top: 15px;">Raid Tier Structure</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Raid Tier</th>
+                    <th>Raid Name</th>
+                    <th>Group Size</th>
+                    <th>Progression Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Tier 0.5</strong></td>
+                    <td>Barrow Deeps</td>
+                    <td>10-Player</td>
+                    <td>Pre-raid entry epics & 5-man dungeon bridge (located in Hyjal).</td>
+                </tr>
+                <tr>
+                    <td><strong>Tier 1</strong></td>
+                    <td>Hyjal Summit</td>
+                    <td>20-Player</td>
+                    <td>Flagship 20-man raid in Mount Hyjal; alternative gear path to Molten Core.</td>
+                </tr>
+                <tr>
+                    <td><strong>Tier 1</strong></td>
+                    <td>Molten Core / Onyxia</td>
+                    <td>40-Player</td>
+                    <td>Classic 40-man raid progression, Tier 1 sets, and crafting legendaries.</td>
+                </tr>
+                <tr>
+                    <td><strong>Tier 1.5</strong></td>
+                    <td>Zul'Gurub</td>
+                    <td>20-Player</td>
+                    <td>Catch-up gear, powerful enchants, and faction rewards.</td>
+                </tr>
+                <tr>
+                    <td><strong>Tier 2+</strong></td>
+                    <td>BWL / AQ40 / Naxxramas</td>
+                    <td>40-Player</td>
+                    <td>Peak classic endgame progression tiers.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- TALENTS STRATEGY -->
+<div class="info-section">
+    <div class="info-title gold-title">TALENT STRATEGY & CROSS-SPEC META</div>
+    <div class="info-card">
+        <p>Standard WoW Classic talent trees heavily reward cross-spec investment early on. Purely focusing on a single talent tree from levels 10 to 60 often forces you past powerful tier-1 and tier-2 passive talents in secondary specs.</p>
+    </div>
+</div>
+
+<!-- PROFESSIONS & CAMPING SYSTEM -->
+<div class="info-section">
+    <div class="info-title gold-title">PROFESSIONS & THE CAMPING SYSTEM</div>
+    <div class="info-card">
+        <p>In WoW Forever, professions feature unique personal bonuses, passive effects, and a new camping system that gives every profession distinct utilities.</p>
+        
+        <div class="card-header" style="margin-top: 15px;">Crafting & Gathering Bonuses</div>
+        <ul>
+            <li><strong>Alchemy:</strong> Features Mixology (increased duration and potency for elixirs and flasks), an upgradeable Philosopher’s Stone trinket that scales with your skill, and exclusive recipes like attack power flasks.</li>
+            <li><strong>Blacksmithing:</strong> Gains the ability to craft Belt Buckles (used to add a stat-boosting slot) and an on-demand Repair All ability with a cooldown.</li>
+            <li><strong>Enchanting:</strong> Grants exclusive personal Ring Enchants (providing Spell Power, Attack Power, or Stamina) and shard transmuting.</li>
+            <li><strong>Engineering:</strong> Retains powerful combat utilities, gadgets, and bombs, with expanded choices for Goblin and Gnomish specializations.</li>
+            <li><strong>Leatherworking:</strong> Offers specialized armor kits, increased mounted speed options, and expanded elemental/dragonscale crafting paths.</li>
+            <li><strong>Mining:</strong> Grants a passive +5% increased total health bonus and introduces special Arcanite Lodes.</li>
+            <li><strong>Skinning:</strong> Grants a passive +5% increased damage against Beasts and Dragonkin, alongside better acquisition of rare hides.</li>
+            <li><strong>Tailoring:</strong> Grants access to powerful profession-only Embroidery for cloaks (granting Spell Power, Attack Power, or Stamina) and Cloth Scavenging to find extra cloth from humanoids.</li>
+            <li><strong>Herbalism:</strong> Grants Natural Talent, providing passive resistance to all schools of magic that scales with your skill level, plus improved chances to find rare herbs like Black Lotus.</li>
+        </ul>
+
+        <div class="card-header" style="margin-top: 15px;">Camping System Contributions</div>
+        <p>Professions tie directly into the world-wide Camping system, enabling players to place profession-crafted structures into a campsite to grant shared buffs or utility:</p>
+        <ul>
+            <li><strong>Blacksmithing:</strong> Sharpening Wheel (Attack Power buff)</li>
+            <li><strong>Tailoring:</strong> Faction Banner (Spirit buff)</li>
+            <li><strong>Herbalism:</strong> Incense Candle (Intellect buff)</li>
+            <li><strong>Alchemy:</strong> Alchemy Lab (Campsite workspace)</li>
+            <li><strong>Leatherworking:</strong> Tanning Rack (Workspace for advanced recipes)</li>
+            <li><strong>Cooking:</strong> Upgraded Campfires (Increases max campsite object capacity)</li>
+        </ul>
+    </div>
+</div>
+
+<!-- HORDE SECTION -->
+<div class="faction-section">
+    <div class="faction-title horde">HORDE CLASSES</div>
+
+    <!-- Undead Paladin -->
+    <div class="class-card">
+        <div class="class-header">Paladin - Retribution (Cross-Spec Hybrid)</div>
+        <div class="meta-info">Race: Undead | Primary Spec: Retribution | Secondary: Protection</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Level Range</th>
+                    <th>Talent Selected</th>
+                    <th>Rank</th>
+                    <th>Tree</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>10 - 14</td><td>Benediction</td><td>5/5</td><td class="tree-name">Retribution</td></tr>
+                <tr><td>15 - 19</td><td>Precision</td><td>5/5</td><td class="tree-secondary">Protection (Cross-Spec Dip)</td></tr>
+                <tr><td>20</td><td>Seal of Command</td><td>1/1</td><td class="tree-name">Retribution</td></tr>
+                <tr><td>21 - 22</td><td>Pursuit of Justice</td><td>2/2</td><td class="tree-name">Retribution</td></tr>
+                <tr><td>23 - 27</td><td>Conviction</td><td>5/5</td><td class="tree-name">Retribution</td></tr>
+                <tr><td>28 - 29</td><td>Crusade</td><td>2/3</td><td class="tree-name">Retribution</td></tr>
+                <tr><td>30</td><td>Sanctity Aura</td><td>1/1</td><td class="tree-name">Retribution</td></tr>
+            </tbody>
+        </table>
+        <div class="dualspec-note">
+            <strong>Dual Spec Recommendation (Unlocked at Trainer):</strong> Protection (5/5 Redoubt, 5/5 Precision) for instant dungeon tanking roles.
+        </div>
+    </div>
+
+    <!-- Undead Mage -->
+    <div class="class-card">
+        <div class="class-header">Mage - Fire (Cross-Spec Hybrid)</div>
+        <div class="meta-info">Race: Undead | Primary Spec: Fire | Secondary: Arcane</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Level Range</th>
+                    <th>Talent Selected</th>
+                    <th>Rank</th>
+                    <th>Tree</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>10 - 14</td><td>Arcane Subtlety (2/2) & Arcane Focus (3/5)</td><td>5 Points</td><td class="tree-secondary">Arcane (Cross-Spec Dip)</td></tr>
+                <tr><td>15 - 19</td><td>Improved Fireball</td><td>5/5</td><td class="tree-name">Fire</td></tr>
+                <tr><td>20</td><td>Pyroblast</td><td>1/1</td><td class="tree-name">Fire</td></tr>
+                <tr><td>21 - 25</td><td>Ignite</td><td>5/5</td><td class="tree-name">Fire</td></tr>
+                <tr><td>26 - 29</td><td>Impact (3/3) & Flame Throwing (1/2)</td><td>4 Points</td><td class="tree-name">Fire</td></tr>
+                <tr><td>30</td><td>Blast Wave</td><td>1/1</td><td class="tree-name">Fire</td></tr>
+            </tbody>
+        </table>
+        <div class="dualspec-note">
+            <strong>Dual Spec Recommendation:</strong> Frost (5/5 Improved Frostbolt, 5/5 Ice Floes) for safer AOE kite farming.
+        </div>
+    </div>
+
+    <!-- Undead Priest -->
+    <div class="class-card">
+        <div class="class-header">Priest - Shadow (Cross-Spec Hybrid)</div>
+        <div class="meta-info">Race: Undead | Primary Spec: Shadow | Secondary: Discipline</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Level Range</th>
+                    <th>Talent Selected</th>
+                    <th>Rank</th>
+                    <th>Tree</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>10 - 14</td><td>Spirit Tap</td><td>5/5</td><td class="tree-name">Shadow</td></tr>
+                <tr><td>15 - 19</td><td>Wand Specialization</td><td>5/5</td><td class="tree-secondary">Discipline (Cross-Spec Dip)</td></tr>
+                <tr><td>20</td><td>Mind Flay</td><td>1/1</td><td class="tree-name">Shadow</td></tr>
+                <tr><td>21 - 22</td><td>Improved Shadow Word: Pain</td><td>2/2</td><td class="tree-name">Shadow</td></tr>
+                <tr><td>23 - 25</td><td>Shadow Focus</td><td>3/5</td><td class="tree-name">Shadow</td></tr>
+                <tr><td>26 - 29</td><td>Shadow Reach (2/2) & Shadow Weaving (2/5)</td><td>4 Points</td><td class="tree-name">Shadow</td></tr>
+                <tr><td>30</td><td>Vampiric Embrace</td><td>1/1</td><td class="tree-name">Shadow</td></tr>
+            </tbody>
+        </table>
+        <div class="dualspec-note">
+            <strong>Dual Spec Recommendation:</strong> Holy / Discipline mix (5/5 Wand Specialization, 5/5 Divine Fury) for group healing.
+        </div>
+    </div>
+
+    <!-- Orc Shaman -->
+    <div class="class-card">
+        <div class="class-header">Shaman - Enhancement (Cross-Spec Hybrid)</div>
+        <div class="meta-info">Race: Orc | Primary Spec: Enhancement | Secondary: Elemental</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Level Range</th>
+                    <th>Talent Selected</th>
+                    <th>Rank</th>
+                    <th>Tree</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>10 - 14</td><td>Convection</td><td>5/5</td><td class="tree-secondary">Elemental (Cross-Spec Dip)</td></tr>
+                <tr><td>15 - 19</td><td>Thundering Strikes</td><td>5/5</td><td class="tree-name">Enhancement</td></tr>
+                <tr><td>20</td><td>Shamanistic Focus</td><td>1/1</td><td class="tree-name">Enhancement</td></tr>
+                <tr><td>21 - 25</td><td>Flurry</td><td>5/5</td><td class="tree-name">Enhancement</td></tr>
+                <tr><td>26 - 29</td><td>Toughness</td><td>4/5</td><td class="tree-name">Enhancement</td></tr>
+                <tr><td>30</td><td>Spirit Weapons</td><td>1/1</td><td class="tree-name">Enhancement</td></tr>
+            </tbody>
+        </table>
+        <div class="dualspec-note">
+            <strong>Dual Spec Recommendation:</strong> Elemental (5/5 Convection, 5/5 Conduction) for ranged bursting.
+        </div>
+    </div>
+
+    <!-- Orc Rogue -->
+    <div class="class-card">
+        <div class="class-header">Rogue - Assassination (Cross-Spec Hybrid)</div>
+        <div class="meta-info">Race: Orc | Primary Spec: Assassination | Secondary: Combat</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Level Range</th>
+                    <th>Talent Selected</th>
+                    <th>Rank</th>
+                    <th>Tree</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>10 - 14</td><td>Malice</td><td>5/5</td><td class="tree-name">Assassination</td></tr>
+                <tr><td>15 - 19</td><td>Precision</td><td>5/5</td><td class="tree-secondary">Combat (Cross-Spec Dip)</td></tr>
+                <tr><td>20</td><td>Relentless Strikes</td><td>1/1</td><td class="tree-name">Assassination</td></tr>
+                <tr><td>21 - 23</td><td>Ruthlessness</td><td>3/3</td><td class="tree-name">Assassination</td></tr>
+                <tr><td>24 - 25</td><td>Puncturing Wounds</td><td>2/3</td><td class="tree-name">Assassination</td></tr>
+                <tr><td>26 - 29</td><td>Lethality</td><td>4/5</td><td class="tree-name">Assassination</td></tr>
+                <tr><td>30</td><td>Cold Blood</td><td>1/1</td><td class="tree-name">Assassination</td></tr>
+            </tbody>
+        </table>
+        <div class="dualspec-note">
+            <strong>Dual Spec Recommendation:</strong> Combat (5/5 Precision, 5/5 Dual Wield Specialization) for weapon flexibility.
+        </div>
+    </div>
+
+    <!-- Orc Warrior -->
+    <div class="class-card">
+        <div class="class-header">Warrior - Fury (Cross-Spec Hybrid)</div>
+        <div class="meta-info">Race: Orc | Primary Spec: Fury | Secondary: Arms</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Level Range</th>
+                    <th>Talent Selected</th>
+                    <th>Rank</th>
+                    <th>Tree</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>10 - 14</td><td>Cruelty</td><td>5/5</td><td class="tree-name">Fury</td></tr>
+                <tr><td>15 - 19</td><td>Deflection (3/5) & Tactical Mastery (2/5)</td><td>5 Points</td><td class="tree-secondary">Arms (Cross-Spec Dip)</td></tr>
+                <tr><td>20</td><td>Piercing Howl</td><td>1/1</td><td class="tree-name">Fury</td></tr>
+                <tr><td>21 - 25</td><td>Unbridled Wrath</td><td>5/5</td><td class="tree-name">Fury</td></tr>
+                <tr><td>26 - 29</td><td>Commanding Presence</td><td>4/5</td><td class="tree-name">Fury</td></tr>
+                <tr><td>30</td><td>Death Wish</td><td>1/1</td><td class="tree-name">Fury</td></tr>
+            </tbody>
+        </table>
+        <div class="dualspec-note">
+            <strong>Dual Spec Recommendation:</strong> Protection (5/5 Shield Specialization, 5/5 Toughness) for dungeon tanking.
+        </div>
+    </div>
+
+    <!-- Tauren Druid -->
+    <div class="class-card">
+        <div class="class-header">Druid - Feral Combat (Cross-Spec Hybrid)</div>
+        <div class="meta-info">Race: Tauren | Primary Spec: Feral | Secondary: Restoration</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Level Range</th>
+                    <th>Talent Selected</th>
+                    <th>Rank</th>
+                    <th>Tree</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>10 - 14</td><td>Ferocity</td><td>5/5</td><td class="tree-name">Feral Combat</td></tr>
+                <tr><td>15 - 19</td><td>Furor</td><td>5/5</td><td class="tree-secondary">Restoration (Cross-Spec Dip)</td></tr>
+                <tr><td>20</td><td>Feral Charge</td><td>1/1</td><td class="tree-name">Feral Combat</td></tr>
+                <tr><td>21 - 23</td><td>Thick Hide</td><td>3/3</td><td class="tree-name">Feral Combat</td></tr>
+                <tr><td>24 - 25</td><td>Sharpened Claws</td><td>2/3</td><td class="tree-name">Feral Combat</td></tr>
+                <tr><td>26 - 29</td><td>Primal Fury (2/2) & Predatory Strikes (2/3)</td><td>4 Points</td><td class="tree-name">Feral Combat</td></tr>
+                <tr><td>30</td><td>Faerie Fire (Feral)</td><td>1/1</td><td class="tree-name">Feral Combat</td></tr>
+            </tbody>
+        </table>
+        <div class="dualspec-note">
+            <strong>Dual Spec Recommendation:</strong> Restoration (5/5 Improved Mark of the Wild, 5/5 Furor) for emergency healing.
+        </div>
+    </div>
+
+    <!-- Tauren Hunter -->
+    <div class="class-card">
+        <div class="class-header">Hunter - Beast Mastery (Cross-Spec Hybrid)</div>
+        <div class="meta-info">Race: Tauren | Primary Spec: Beast Mastery | Secondary: Marksmanship</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Level Range</th>
+                    <th>Talent Selected</th>
+                    <th>Rank</th>
+                    <th>Tree</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>10 - 14</td><td>Improved Aspect of the Hawk</td><td>5/5</td><td class="tree-name">Beast Mastery</td></tr>
+                <tr><td>15 - 19</td><td>Lethal Shots</td><td>5/5</td><td class="tree-secondary">Marksmanship (Cross-Spec Dip)</td></tr>
+                <tr><td>20 - 24</td><td>Unleashed Fury</td><td>5/5</td><td class="tree-name">Beast Mastery</td></tr>
+                <tr><td>25 - 29</td><td>Ferocity</td><td>5/5</td><td class="tree-name">Beast Mastery</td></tr>
+                <tr><td>30</td><td>Bestial Wrath</td><td>1/1</td><td class="tree-name">Beast Mastery</td></tr>
+            </tbody>
+        </table>
+        <div class="dualspec-note">
+            <strong>Dual Spec Recommendation:</strong> Marksmanship (5/5 Efficiency, 5/5 Lethal Shots) for high ranged burst.
+        </div>
+    </div>
+
+    <!-- Troll Warlock -->
+    <div class="class-card">
+        <div class="class-header">Warlock - Demonology (Cross-Spec Hybrid)</div>
+        <div class="meta-info">Race: Troll | Primary Spec: Demonology | Secondary: Affliction</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Level Range</th>
+                    <th>Talent Selected</th>
+                    <th>Rank</th>
+                    <th>Tree</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>10 - 14</td><td>Improved Life Tap (2/2) & Suppression (3/5)</td><td>5 Points</td><td class="tree-secondary">Affliction (Cross-Spec Dip)</td></tr>
+                <tr><td>15 - 19</td><td>Improved Voidwalker (3/3) & Demonic Embrace (2/5)</td><td>5 Points</td><td class="tree-name">Demonology</td></tr>
+                <tr><td>20</td><td>Fel Domination</td><td>1/1</td><td class="tree-name">Demonology</td></tr>
+                <tr><td>21 - 24</td><td>Fel Stamina</td><td>4/5</td><td class="tree-name">Demonology</td></tr>
+                <tr><td>25 - 29</td><td>Master Summoner (2/2) & Demonic Sacrifice</td><td>3 Points</td><td class="tree-name">Demonology</td></tr>
+                <tr><td>30</td><td>Soul Link</td><td>1/1</td><td class="tree-name">Demonology</td></tr>
+            </tbody>
+        </table>
+        <div class="dualspec-note">
+            <strong>Dual Spec Recommendation:</strong> Affliction (5/5 Improved Curse of Agony, 5/5 Suppression) for multi-dotting.
+        </div>
+    </div>
+</div>
+
+<!-- ALLIANCE SECTION -->
+<div class="faction-section">
+    <div class="faction-title alliance">ALLIANCE CLASSES</div>
+
+    <!-- Human Paladin -->
+    <div class="class-card">
+        <div class="class-header">Paladin - Retribution (Cross-Spec Hybrid)</div>
+        <div class="meta-info">Race: Human | Primary Spec: Retribution | Secondary: Protection</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Level Range</th>
+                    <th>Talent Selected</th>
+                    <th>Rank</th>
+                    <th>Tree</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>10 - 14</td><td>Benediction</td><td>5/5</td><td class="tree-name">Retribution</td></tr>
+                <tr><td>15 - 19</td><td>Precision</td><td>5/5</td><td class="tree-secondary">Protection (Cross-Spec Dip)</td></tr>
+                <tr><td>20</td><td>Seal of Command</td><td>1/1</td><td class="tree-name">Retribution</td></tr>
+                <tr><td>21 - 25</td><td>Conviction</td><td>5/5</td><td class="tree-name">Retribution</td></tr>
+                <tr><td>26 - 29</td><td>Crusade</td><td>3/3</td><td class="tree-name">Retribution</td></tr>
+                <tr><td>30</td><td>Sanctity Aura</td><td>1/1</td><td class="tree-name">Retribution</td></tr>
+            </tbody>
+        </table>
+        <div class="dualspec-note">
+            <strong>Dual Spec Recommendation:</strong> Holy (5/5 Divine Favor, 5/5 Spiritual Focus) for healing groups.
+        </div>
+    </div>
+
+    <!-- Human Mage -->
+    <div class="class-card">
+        <div class="class-header">Mage - Fire (Cross-Spec Hybrid)</div>
+        <div class="meta-info">Race: Human | Primary Spec: Fire | Secondary: Arcane</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Level Range</th>
+                    <th>Talent Selected</th>
+                    <th>Rank</th>
+                    <th>Tree</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>10 - 14</td><td>Arcane Subtlety (2/2) & Arcane Focus (3/5)</td><td>5 Points</td><td class="tree-secondary">Arcane (Cross-Spec Dip)</td></tr>
+                <tr><td>15 - 19</td><td>Improved Fireball</td><td>5/5</td><td class="tree-name">Fire</td></tr>
+                <tr><td>20</td><td>Pyroblast</td><td>1/1</td><td class="tree-name">Fire</td></tr>
+                <tr><td>21 - 25</td><td>Ignite</td><td>5/5</td><td class="tree-name">Fire</td></tr>
+                <tr><td>26 - 29</td><td>Critical Mass</td><td>3/3</td><td class="tree-name">Fire</td></tr>
+                <tr><td>30</td><td>Blast Wave</td><td>1/1</td><td class="tree-name">Fire</td></tr>
+            </tbody>
+        </table>
+        <div class="dualspec-note">
+            <strong>Dual Spec Recommendation:</strong> Arcane (5/5 Arcane Focus, 5/5 Arcane Concentration) for single-target efficiency.
+        </div>
+    </div>
+
+    <!-- Human Warlock -->
+    <div class="class-card">
+        <div class="class-header">Warlock - Demonology (Cross-Spec Hybrid)</div>
+        <div class="meta-info">Race: Human | Primary Spec: Demonology | Secondary: Affliction</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Level Range</th>
+                    <th>Talent Selected</th>
+                    <th>Rank</th>
+                    <th>Tree</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>10 - 14</td><td>Improved Life Tap (2/2) & Suppression (3/5)</td><td>5 Points</td><td class="tree-secondary">Affliction (Cross-Spec Dip)</td></tr>
+                <tr><td>15 - 19</td><td>Improved Voidwalker (3/3) & Demonic Embrace (2/5)</td><td>5 Points</td><td class="tree-name">Demonology</td></tr>
+                <tr><td>20</td><td>Fel Domination</td><td>1/1</td><td class="tree-name">Demonology</td></tr>
+                <tr><td>21 - 25</td><td>Fel Stamina</td><td>5/5</td><td class="tree-name">Demonology</td></tr>
+                <tr><td>26 - 29</td><td>Master Summoner</td><td>2/2</td><td class="tree-name">Demonology</td></tr>
+                <tr><td>30</td><td>Soul Link</td><td>1/1</td><td class="tree-name">Demonology</td></tr>
+            </tbody>
+        </table>
+        <div class="dualspec-note">
+            <strong>Dual Spec Recommendation:</strong> Destruction (5/5 Bane, 5/5 Shadow Bolt Volley) for direct burst.
+        </div>
+    </div>
+
+    <!-- Night Elf Druid -->
+    <div class="class-card">
+        <div class="class-header">Druid - Feral Combat (Cross-Spec Hybrid)</div>
+        <div class="meta-info">Race: Night Elf | Primary Spec: Feral | Secondary: Restoration</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Level Range</th>
+                    <th>Talent Selected</th>
+                    <th>Rank</th>
+                    <th>Tree</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>10 - 14</td><td>Ferocity</td><td>5/5</td><td class="tree-name">Feral Combat</td></tr>
+                <tr><td>15 - 19</td><td>Furor</td><td>5/5</td><td class="tree-secondary">Restoration (Cross-Spec Dip)</td></tr>
+                <tr><td>20</td><td>Feral Charge</td><td>1/1</td><td class="tree-name">Feral Combat</td></tr>
+                <tr><td>21 - 25</td><td>Sharpened Claws (3/3) & Predatory Strikes (2/3)</td><td>5 Points</td><td class="tree-name">Feral Combat</td></tr>
+                <tr><td>26 - 29</td><td>Primal Fury</td><td>2/2</td><td class="tree-name">Feral Combat</td></tr>
+                <tr><td>30</td><td>Faerie Fire (Feral)</td><td>1/1</td><td class="tree-name">Feral Combat</td></tr>
+            </tbody>
+        </table>
+        <div class="dualspec-note">
+            <strong>Dual Spec Recommendation:</strong> Balance (5/5 Starlight Wrath, 5/5 Improved Moonfire) for ranged damage.
+        </div>
+    </div>
+
+    <!-- Night Elf Rogue -->
+    <div class="class-card">
+        <div class="class-header">Rogue - Assassination (Cross-Spec Hybrid)</div>
+        <div class="meta-info">Race: Night Elf | Primary Spec: Assassination | Secondary: Combat</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Level Range</th>
+                    <th>Talent Selected</th>
+                    <th>Rank</th>
+                    <th>Tree</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>10 - 14</td><td>Malice</td><td>5/5</td><td class="tree-name">Assassination</td></tr>
+                <tr><td>15 - 19</td><td>Precision</td><td>5/5</td><td class="tree-secondary">Combat (Cross-Spec Dip)</td></tr>
+                <tr><td>20</td><td>Relentless Strikes</td><td>1/1</td><td class="tree-name">Assassination</td></tr>
+                <tr><td>21 - 23</td><td>Ruthlessness</td><td>3/3</td><td class="tree-name">Assassination</td></tr>
+                <tr><td>24 - 25</td><td>Puncturing Wounds</td><td>2/3</td><td class="tree-name">Assassination</td></tr>
+                <tr><td>26 - 29</td><td>Lethality</td><td>4/5</td><td class="tree-name">Assassination</td></tr>
+                <tr><td>30</td><td>Cold Blood</td><td>1/1</td><td class="tree-name">Assassination</td></tr>
+            </tbody>
+        </table>
+        <div class="dualspec-note">
+            <strong>Dual Spec Recommendation:</strong> Subtlety (5/5 Master of Deception, 5/5 Opportunity) for stealth control.
+        </div>
+    </div>
+
+    <!-- Night Elf Warrior -->
+    <div class="class-card">
+        <div class="class-header">Warrior - Fury (Cross-Spec Hybrid)</div>
+        <div class="meta-info">Race: Night Elf | Primary Spec: Fury | Secondary: Arms</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Level Range</th>
+                    <th>Talent Selected</th>
+                    <th>Rank</th>
+                    <th>Tree</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>10 - 14</td><td>Cruelty</td><td>5/5</td><td class="tree-name">Fury</td></tr>
+                <tr><td>15 - 19</td><td>Deflection (3/5) & Tactical Mastery (2/5)</td><td>5 Points</td><td class="tree-secondary">Arms (Cross-Spec Dip)</td></tr>
+                <tr><td>20</td><td>Piercing Howl</td><td>1/1</td><td class="tree-name">Fury</td></tr>
+                <tr><td>21 - 25</td><td>Unbridled Wrath</td><td>5/5</td><td class="tree-name">Fury</td></tr>
+                <tr><td>26 - 29</td><td>Commanding Presence</td><td>4/5</td><td class="tree-name">Fury</td></tr>
+                <tr><td>30</td><td>Death Wish</td><td>1/1</td><td class="tree-name">Fury</td></tr>
+            </tbody>
+        </table>
+        <div class="dualspec-note">
+            <strong>Dual Spec Recommendation:</strong> Arms (5/5 Deflection, 5/5 Tactical Mastery) for open-world stance management.
+        </div>
+    </div>
+
+    <!-- Dwarf Shaman -->
+    <div class="class-card">
+        <div class="class-header">Shaman - Enhancement (Cross-Spec Hybrid)</div>
+        <div class="meta-info">Race: Dwarf | Primary Spec: Enhancement | Secondary: Elemental</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Level Range</th>
+                    <th>Talent Selected</th>
+                    <th>Rank</th>
+                    <th>Tree</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>10 - 14</td><td>Convection</td><td>5/5</td><td class="tree-secondary">Elemental (Cross-Spec Dip)</td></tr>
+                <tr><td>15 - 19</td><td>Thundering Strikes</td><td>5/5</td><td class="tree-name">Enhancement</td></tr>
+                <tr><td>20</td><td>Shamanistic Focus</td><td>1/1</td><td class="tree-name">Enhancement</td></tr>
+                <tr><td>21 - 25</td><td>Flurry</td><td>5/5</td><td class="tree-name">Enhancement</td></tr>
+                <tr><td>26 - 29</td><td>Toughness</td><td>4/5</td><td class="tree-name">Enhancement</td></tr>
+                <tr><td>30</td><td>Spirit Weapons</td><td>1/1</td><td class="tree-name">Enhancement</td></tr>
+            </tbody>
+        </table>
+        <div class="dualspec-note">
+            <strong>Dual Spec Recommendation:</strong> Restoration (5/5 Tidal Focus, 5/5 Totemic Focus) for group healing.
+        </div>
+    </div>
+
+    <!-- Dwarf Hunter -->
+    <div class="class-card">
+        <div class="class-header">Hunter - Beast Mastery (Cross-Spec Hybrid)</div>
+        <div class="meta-info">Race: Dwarf | Primary Spec: Beast Mastery | Secondary: Marksmanship</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Level Range</th>
+                    <th>Talent Selected</th>
+                    <th>Rank</th>
+                    <th>Tree</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>10 - 14</td><td>Improved Aspect of the Hawk</td><td>5/5</td><td class="tree-name">Beast Mastery</td></tr>
+                <tr><td>15 - 19</td><td>Lethal Shots</td><td>5/5</td><td class="tree-secondary">Marksmanship (Cross-Spec Dip)</td></tr>
+                <tr><td>20 - 24</td><td>Unleashed Fury</td><td>5/5</td><td class="tree-name">Beast Mastery</td></tr>
+                <tr><td>25 - 29</td><td>Ferocity</td><td>5/5</td><td class="tree-name">Beast Mastery</td></tr>
+                <tr><td>30</td><td>Bestial Wrath</td><td>1/1</td><td class="tree-name">Beast Mastery</td></tr>
+            </tbody>
+        </table>
+        <div class="dualspec-note">
+            <strong>Dual Spec Recommendation:</strong> Survival (5/5 Humanoid Slaying, 5/5 Savage Strikes) for trap utility.
+        </div>
+    </div>
+
+    <!-- Gnome Priest -->
+    <div class="class-card">
+        <div class="class-header">Priest - Shadow (Cross-Spec Hybrid)</div>
+        <div class="meta-info">Race: Gnome | Primary Spec: Shadow | Secondary: Discipline</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Level Range</th>
+                    <th>Talent Selected</th>
+                    <th>Rank</th>
+                    <th>Tree</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>10 - 14</td><td>Spirit Tap</td><td>5/5</td><td class="tree-name">Shadow</td></tr>
+                <tr><td>15 - 19</td><td>Wand Specialization</td><td>5/5</td><td class="tree-secondary">Discipline (Cross-Spec Dip)</td></tr>
+                <tr><td>20</td><td>Mind Flay</td><td>1/1</td><td class="tree-name">Shadow</td></tr>
+                <tr><td>21 - 22</td><td>Improved Shadow Word: Pain</td><td>2/2</td><td class="tree-name">Shadow</td></tr>
+                <tr><td>23 - 25</td><td>Shadow Focus</td><td>3/5</td><td class="tree-name">Shadow</td></tr>
+                <tr><td>26 - 29</td><td>Mind Melt</td><td>2/2</td><td class="tree-name">Shadow</td></tr>
+                <tr><td>30</td><td>Vampiric Embrace</td><td>1/1</td><td class="tree-name">Shadow</td></tr>
+            </tbody>
+        </table>
+        <div class="dualspec-note">
+            <strong>Dual Spec Recommendation:</strong> Discipline (5/5 Unbreakable Will, 5/5 Silent Resolve) for PvP/Shield support.
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
