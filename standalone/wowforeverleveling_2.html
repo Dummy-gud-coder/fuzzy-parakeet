@@ -89,6 +89,20 @@
         li {
             margin-bottom: 4px;
         }
+        .combo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .combo-box {
+            background-color: #1a1c28;
+            border: 1px solid #383a59;
+            padding: 12px;
+        }
+        .combo-box h3 {
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
     </style>
 </head>
 <body>
@@ -268,6 +282,31 @@
     </div>
 </div>
 
+<!-- RACE & CLASS COMBINATIONS SUMMARY -->
+<div class="info-section">
+    <div class="info-title gold-title">RACE & CLASS COMBINATIONS</div>
+    <div class="combo-grid">
+        <div class="combo-box">
+            <h3 class="horde">Horde</h3>
+            <ul>
+                <li><strong>Undead:</strong> Paladin, Mage</li>
+                <li><strong>Orc:</strong> Shaman, Rogue, Warrior</li>
+                <li><strong>Tauren:</strong> Druid, Hunter</li>
+                <li><strong>Troll:</strong> Warlock, Priest</li>
+            </ul>
+        </div>
+        <div class="combo-box">
+            <h3 class="alliance">Alliance</h3>
+            <ul>
+                <li><strong>Human:</strong> Paladin, Mage, Priest</li>
+                <li><strong>Night Elf:</strong> Druid, Rogue, Warrior</li>
+                <li><strong>Dwarf:</strong> Shaman, Hunter</li>
+                <li><strong>Gnome:</strong> Warlock</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
 <!-- HORDE SECTION -->
 <div class="faction-section">
     <div class="faction-title horde">HORDE CLASSES</div>
@@ -327,10 +366,10 @@
         </div>
     </div>
 
-    <!-- Undead Priest -->
+    <!-- Troll Priest -->
     <div class="class-card">
         <div class="class-header">Priest - Shadow (Cross-Spec Hybrid)</div>
-        <div class="meta-info">Race: Undead | Primary Spec: Shadow | Secondary: Discipline</div>
+        <div class="meta-info">Race: Troll | Primary Spec: Shadow | Secondary: Discipline</div>
         <table>
             <thead>
                 <tr>
@@ -577,10 +616,10 @@
         </div>
     </div>
 
-    <!-- Human Warlock -->
+    <!-- Human Priest -->
     <div class="class-card">
-        <div class="class-header">Warlock - Demonology (Cross-Spec Hybrid)</div>
-        <div class="meta-info">Race: Human | Primary Spec: Demonology | Secondary: Affliction</div>
+        <div class="class-header">Priest - Shadow (Cross-Spec Hybrid)</div>
+        <div class="meta-info">Race: Human | Primary Spec: Shadow | Secondary: Discipline</div>
         <table>
             <thead>
                 <tr>
@@ -591,16 +630,17 @@
                 </tr>
             </thead>
             <tbody>
-                <tr><td>10 - 14</td><td>Improved Life Tap (2/2) & Suppression (3/5)</td><td>5 Points</td><td class="tree-secondary">Affliction (Cross-Spec Dip)</td></tr>
-                <tr><td>15 - 19</td><td>Improved Voidwalker (3/3) & Demonic Embrace (2/5)</td><td>5 Points</td><td class="tree-name">Demonology</td></tr>
-                <tr><td>20</td><td>Fel Domination</td><td>1/1</td><td class="tree-name">Demonology</td></tr>
-                <tr><td>21 - 25</td><td>Fel Stamina</td><td>5/5</td><td class="tree-name">Demonology</td></tr>
-                <tr><td>26 - 29</td><td>Master Summoner</td><td>2/2</td><td class="tree-name">Demonology</td></tr>
-                <tr><td>30</td><td>Soul Link</td><td>1/1</td><td class="tree-name">Demonology</td></tr>
+                <tr><td>10 - 14</td><td>Spirit Tap</td><td>5/5</td><td class="tree-name">Shadow</td></tr>
+                <tr><td>15 - 19</td><td>Wand Specialization</td><td>5/5</td><td class="tree-secondary">Discipline (Cross-Spec Dip)</td></tr>
+                <tr><td>20</td><td>Mind Flay</td><td>1/1</td><td class="tree-name">Shadow</td></tr>
+                <tr><td>21 - 22</td><td>Improved Shadow Word: Pain</td><td>2/2</td><td class="tree-name">Shadow</td></tr>
+                <tr><td>23 - 25</td><td>Shadow Focus</td><td>3/5</td><td class="tree-name">Shadow</td></tr>
+                <tr><td>26 - 29</td><td>Mind Melt</td><td>2/2</td><td class="tree-name">Shadow</td></tr>
+                <tr><td>30</td><td>Vampiric Embrace</td><td>1/1</td><td class="tree-name">Shadow</td></tr>
             </tbody>
         </table>
         <div class="dualspec-note">
-            <strong>Dual Spec Recommendation:</strong> Destruction (5/5 Bane, 5/5 Shadow Bolt Volley) for direct burst.
+            <strong>Dual Spec Recommendation:</strong> Discipline (5/5 Unbreakable Will, 5/5 Silent Resolve) for PvP/Shield support.
         </div>
     </div>
 
@@ -731,7 +771,7 @@
                 <tr><td>15 - 19</td><td>Lethal Shots</td><td>5/5</td><td class="tree-secondary">Marksmanship (Cross-Spec Dip)</td></tr>
                 <tr><td>20 - 24</td><td>Unleashed Fury</td><td>5/5</td><td class="tree-name">Beast Mastery</td></tr>
                 <tr><td>25 - 29</td><td>Ferocity</td><td>5/5</td><td class="tree-name">Beast Mastery</td></tr>
-                <tr><td>30</td><td>Bestial Wrath</td><td>1/1</td><td class="tree-name">Beast Mastery</td></tr>
+                <tr><td>30</td><td>Bestial Wrath</td><td>1/1</td><td class="tree-name">Bestial Wrath</td></tr>
             </tbody>
         </table>
         <div class="dualspec-note">
@@ -739,10 +779,10 @@
         </div>
     </div>
 
-    <!-- Gnome Priest -->
+    <!-- Gnome Warlock -->
     <div class="class-card">
-        <div class="class-header">Priest - Shadow (Cross-Spec Hybrid)</div>
-        <div class="meta-info">Race: Gnome | Primary Spec: Shadow | Secondary: Discipline</div>
+        <div class="class-header">Warlock - Demonology (Cross-Spec Hybrid)</div>
+        <div class="meta-info">Race: Gnome | Primary Spec: Demonology | Secondary: Affliction</div>
         <table>
             <thead>
                 <tr>
@@ -753,17 +793,16 @@
                 </tr>
             </thead>
             <tbody>
-                <tr><td>10 - 14</td><td>Spirit Tap</td><td>5/5</td><td class="tree-name">Shadow</td></tr>
-                <tr><td>15 - 19</td><td>Wand Specialization</td><td>5/5</td><td class="tree-secondary">Discipline (Cross-Spec Dip)</td></tr>
-                <tr><td>20</td><td>Mind Flay</td><td>1/1</td><td class="tree-name">Shadow</td></tr>
-                <tr><td>21 - 22</td><td>Improved Shadow Word: Pain</td><td>2/2</td><td class="tree-name">Shadow</td></tr>
-                <tr><td>23 - 25</td><td>Shadow Focus</td><td>3/5</td><td class="tree-name">Shadow</td></tr>
-                <tr><td>26 - 29</td><td>Mind Melt</td><td>2/2</td><td class="tree-name">Shadow</td></tr>
-                <tr><td>30</td><td>Vampiric Embrace</td><td>1/1</td><td class="tree-name">Shadow</td></tr>
+                <tr><td>10 - 14</td><td>Improved Life Tap (2/2) & Suppression (3/5)</td><td>5 Points</td><td class="tree-secondary">Affliction (Cross-Spec Dip)</td></tr>
+                <tr><td>15 - 19</td><td>Improved Voidwalker (3/3) & Demonic Embrace (2/5)</td><td>5 Points</td><td class="tree-name">Demonology</td></tr>
+                <tr><td>20</td><td>Fel Domination</td><td>1/1</td><td class="tree-name">Demonology</td></tr>
+                <tr><td>21 - 25</td><td>Fel Stamina</td><td>5/5</td><td class="tree-name">Demonology</td></tr>
+                <tr><td>26 - 29</td><td>Master Summoner</td><td>2/2</td><td class="tree-name">Demonology</td></tr>
+                <tr><td>30</td><td>Soul Link</td><td>1/1</td><td class="tree-name">Demonology</td></tr>
             </tbody>
         </table>
         <div class="dualspec-note">
-            <strong>Dual Spec Recommendation:</strong> Discipline (5/5 Unbreakable Will, 5/5 Silent Resolve) for PvP/Shield support.
+            <strong>Dual Spec Recommendation:</strong> Destruction (5/5 Bane, 5/5 Shadow Bolt Volley) for direct burst.
         </div>
     </div>
 </div>
